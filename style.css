@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lexend+Deca&display=swap");
+
+:root {
+  --dark-blue-mainBg: hsl(233, 47%, 7%);
+  --desaturated-blue-cardBg: hsl(244, 38%, 16%);
+  --soft-violet: hsl(277, 64%, 61%);
+  --white: hsl(0, 0%, 100%);
+  --transparent-white-mainParagraph: hsla(0, 0%, 100%, 0.75);
+  --stransparent-white-statHeadings: hsla(0, 0%, 100%, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--dark-blue-mainBg);
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 100rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.container-left {
+  background-color: var(--desaturated-blue-cardBg);
+  padding: 5rem;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+h1 {
+  font-family: "Inter", sans-serif;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 3.5rem;
+}
+
+.purple {
+  color: var(--soft-violet);
+}
+
+p {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 1.5rem;
+  color: var(--stransparent-white-statHeadings);
+  margin: 2rem 0 5rem 0;
+}
+
+.flex {
+  display: flex;
+  gap: 4rem 7rem;
+}
+
+.stat {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 0.8rem;
+}
+
+.bold {
+  color: var(--white);
+  font-family: "Inter", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.small {
+  color: var(--stransparent-white-statHeadings);
+  font-family: "Lexend Deca", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.container-right {
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  overflow: hidden;
+}
+
+.img-container {
+  background: linear-gradient(#aa5cdba1, #aa5cdba1),
+    url(./images/image-header-desktop.jpg) center center/cover;
+  min-width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template: 40rem auto / 1fr;
+  }
+
+  .container-right {
+    grid-row: 1 /2;
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 0;
+  }
+
+  .img-container {
+    background: linear-gradient(#aa5cdba1, #aa5cdba1),
+      url(./images/image-header-mobile.jpg) center center/cover;
+  }
+
+  .container-left {
+    border-bottom-right-radius: 1rem;
+    border-top-left-radius: 0;
+    text-align: center;
+  }
+
+  .flex {
+    flex-direction: column;
+  }
+}
